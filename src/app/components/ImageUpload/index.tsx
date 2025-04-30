@@ -1,6 +1,7 @@
 'use client';
 
-import { ChangeEvent, useState } from 'react';
+import type { ChangeEvent } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import styles from './ImageUpload.module.css';
 import Button from '../Button';
@@ -26,36 +27,19 @@ export default function ImageUpload({ onImageSelect }: ImageUploadProps) {
       <label htmlFor="poster-upload" className={styles.uploadArea}>
         {previewUrl ? (
           <div className={styles.preview}>
-            <Image
-              src={previewUrl}
-              alt="Selected poster"
-              fill
-              style={{ objectFit: 'cover' }}
-            />
+            <Image src={previewUrl} alt="Selected poster" fill style={{ objectFit: 'cover' }} />
           </div>
         ) : (
           <>
-            <Image
-              src="/icons/image-fill.svg"
-              alt="Upload icon"
-              width={48}
-              height={48}
-              className={styles.icon}
-            />
+            <Image src="/icons/image-fill.svg" alt="Upload icon" width={48} height={48} className={styles.icon} />
             <span className={styles.text}>Upload your poster</span>
           </>
         )}
-        <input
-          type="file"
-          id="poster-upload"
-          accept="image/*"
-          onChange={handleImageChange}
-          className={styles.input}
-        />
+        <input type="file" id="poster-upload" accept="image/*" onChange={handleImageChange} className={styles.input} />
       </label>
       <div className={styles.buttonContainer}>
         <Button type="button">Send poster</Button>
       </div>
     </div>
   );
-} 
+}

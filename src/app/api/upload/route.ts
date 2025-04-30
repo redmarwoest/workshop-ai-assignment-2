@@ -1,8 +1,9 @@
+/* eslint-disable import/prefer-default-export */
 import { put } from '@vercel/blob';
 import { sql } from '@vercel/postgres';
 import { NextResponse } from 'next/server';
 
-export default async function POST(request: Request) {
+export async function POST(request: Request) {
   try {
     const formData = await request.formData();
     const file = formData.get('file') as File;

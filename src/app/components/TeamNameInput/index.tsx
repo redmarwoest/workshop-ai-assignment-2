@@ -1,6 +1,6 @@
 'use client';
 
-import { ChangeEvent } from 'react';
+import type { ChangeEvent } from 'react';
 import styles from './TeamNameInput.module.css';
 
 interface TeamNameInputProps {
@@ -9,11 +9,7 @@ interface TeamNameInputProps {
   placeholder?: string;
 }
 
-export default function TeamNameInput({ 
-  value, 
-  onChange, 
-  placeholder = 'Placeholder'
-}: TeamNameInputProps) {
+export default function TeamNameInput({ value, onChange, placeholder = 'Placeholder' }: TeamNameInputProps) {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     onChange(e.target.value);
   };
@@ -33,4 +29,4 @@ export default function TeamNameInput({
       />
     </div>
   );
-} 
+}
