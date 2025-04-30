@@ -52,9 +52,6 @@ export default function Home() {
         <form onSubmit={handleSubmit}>
           <TeamNameInput value={teamName} onChange={setTeamName} placeholder="Enter your team name" />
           <ImageUpload onImageSelect={handleImageSelect} />
-          <button type="submit" className={styles.submitButton}>
-            Submit
-          </button>
         </form>
       </main>
     </div>

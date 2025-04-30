@@ -38,7 +38,7 @@ export default function ImageUpload({ onImageSelect }: ImageUploadProps) {
         <input type="file" id="poster-upload" accept="image/*" onChange={handleImageChange} className={styles.input} />
       </label>
       <div className={styles.buttonContainer}>
-        <Button type="button">Send poster</Button>
+        <Button type="submit">Send poster</Button>
       </div>
     </div>
   );
