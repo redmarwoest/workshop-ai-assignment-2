@@ -13,11 +13,49 @@ export default function Home() {
     setSelectedImage(file);
   };
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!selectedImage || !teamName) {
+      alert('Please provide both a team name and an image');
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('file', selectedImage);
+    formData.append('teamName', teamName);
+
+    try {
+      const response = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error('Upload failed');
+      }
+
+      await response.json();
+      alert('Upload successful!');
+      // Reset form
+      setTeamName('');
+      setSelectedImage(null);
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Upload failed. Please try again.');
+    }
+  };
+
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <TeamNameInput value={teamName} onChange={setTeamName} placeholder="Enter your team name" />
-        <ImageUpload onImageSelect={handleImageSelect} />
+        <form onSubmit={handleSubmit}>
+          <TeamNameInput value={teamName} onChange={setTeamName} placeholder="Enter your team name" />
+          <ImageUpload onImageSelect={handleImageSelect} />
+          <button type="submit" className={styles.submitButton}>
+            Submit
+          </button>
+        </form>
       </main>
     </div>
   );
