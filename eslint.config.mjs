@@ -29,7 +29,6 @@ const eslintConfig = [
           "react/prop-types": "off",
           "react/react-in-jsx-scope": 0,
           "react/require-default-props": "off",
-          "no-console": ["error"],
           "@typescript-eslint/no-unused-vars": ["error"],
           quotes: ["error", "single", { avoidEscape: true }],
           eqeqeq: ["error", "always"],

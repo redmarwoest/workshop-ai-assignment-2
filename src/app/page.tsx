@@ -16,11 +16,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <TeamNameInput
-          value={teamName}
-          onChange={setTeamName}
-          placeholder="Enter your team name"
-        />
+        <TeamNameInput value={teamName} onChange={setTeamName} placeholder="Enter your team name" />
         <ImageUpload onImageSelect={handleImageSelect} />
       </main>
     </div>
