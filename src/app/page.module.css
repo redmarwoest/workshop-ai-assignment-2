@@ -27,11 +27,16 @@
   }
 }
 
+.container {
+  min-height: 100vh;
+  padding: 24px;
+  background-color: #ffffff;
+}
+
 .main {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 24px;
 }
 
 .main ol {
