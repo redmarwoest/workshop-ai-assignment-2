@@ -101,9 +101,6 @@ To get up and running with the project:
     - Follow the API documentation to connect and handle responses.
 
 6. **Deploy to Vercel**:
-    - Deploy the application to Vercel for public access:
-    ```bash
-    vercel
-    ```
+    - Deploy the application to Vercel for public access: https://upload-picture-app.vercel.app/ 
 
 ---
